@@ -1,1 +1,1 @@
-# js_alused
+# js_basics
