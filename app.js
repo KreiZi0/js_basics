@@ -1,29 +1,32 @@
-// Muutujad 
-/*
-vaatame
-kuidas
-luua ja kasutada muutujad
-*/ 
-//Muutuja, mille sisu saab muuta
+// Andmetüübid
 
-let name = "Steven Mirontšuk";
+//Primitives
 
-name = "Steven Lepp";
+//tekst
+const name = "Kadi Tamm";
 
+//numbrid
+const age = 15;
+const height = 1.75;
 
-let eesnimi = "Steven";
+//Tõeväärtused - true ja false
+const hasKids = false;
 
-//Muutuja, mis on konstantne
-const perenimi = "Mirontšuk";
-// perenimi = "Lepp"
-const numbers = [1, 2, 3, 4];
-numbers.push(6);
+//null
+const hasAirplane = null;
 
+let test;
+// Reference types
+
+// massiiv 
+const hobbies = ["music", "sport"];
+
+//object
 const person = {
-	name: "Steven",
-	age: 18
+	name: "Kadi",
+	age: 15
 };
 
-person.age = 19
-console.log(person);
-console.log(numbers);
+const today = new Date();
+console.log(today);
+console.log(typeof today);
