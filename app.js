@@ -1,49 +1,54 @@
-let color = "blue";
+// for tsükkel
 
-switch(color){
-	case 'red':
-	console.log('stop!');
-	break;
-	case 'yellow':
-	console.log("Attention");
-	break;
-	case 'green':
-	console.log("Go!");
-	break;
-	default:
-	console.log("This color is not allowed");
-	break;
-
+for(let i = 0; i < 10; i++){
+	//if(i % 2 === 0)
+	//	 console.log(i);
 }
 
-let kuupäev = new Date();
-let päevanr = kuupäev.getDay();
-//console.log(päevanr);
+for(let i = 0; i < 10; i++){
+//	if(i === 5) break;
+//	if(i === 5) continue;
+//	console.log(i);
+}
 
-switch(päevanr){
-	case 1:
-	console.log('esmaspäev');
-	break;
-	case 2:
-	console.log('teisipäev');
-	break;
-	case 3:
-	console.log('kolmapäev');
-	break;
-	case 4:
-	console.log('neljapäev');
-	break;
-	case 5:
-	console.log("reede");
-	break;
-	case 6:
-	console.log("laupäev");
-	break;
-	case 7:
-	console.log("pühapäev");
-	break;
-	default:
-	console.log("Ei sobi");
-	break;
 
+// while
+
+let i = 0;
+while(i<10){
+	console.log(i);
+	i++;
+}
+
+// do while
+console.log("do while");
+let j = 0;
+do{
+	console.log(j);
+	j++;
+
+} while(j < 10);
+
+
+// tüsklid ja massiivid
+const cars = ["Ford MONDEO", "Honda CIVIC", "Toyota AVENSIS"];
+for(let i = 0; i < cars.length; i++){
+	console.log(cars[i]);
+}
+
+
+// foreach-iga 
+
+cars.forEach(function(car, index){
+	console.log(`${index} - ${car}`);
+});
+
+const person = {
+	firstname: "Kalle",
+	lastname: "Puu",
+	age: 25
+}
+
+for (let element in person){
+	console.log(`${element} - ${person[element]}`);
 }
