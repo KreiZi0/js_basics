@@ -1,29 +1,24 @@
+const today = new Date();
 
-const person = {
-
-	firstname: "Kadi",
-	lastname: "Tamm",
-	age: 23,
-	email: "kadi.tamm@gmail.com",
-	hobbies: ['muusika', 'sport'],
-	address: {
-		city: 'Tallinn',
-		country: 'Estonia'
-	},
-	getBirthdayYear: function(){
-		return 2021 - this.age;
-	}
+val = today.getMonth(); // jaanuar - 0
+val = today.getDate();
+val = today.getDay();
+val = today.getFullYear();
+val = today.getHours();
+val = today.getMinutes();
+val = today.getSeconds();
+val = today.getMilliseconds();
+val = today.getTime();
 
 
-};
+birthday = new Date('10/02/2021 12:00:50');
 
+birthday.setMonth(2);
+birthday.setDate(12);
+birthday.setFullYear(2020);
+birthday.setHours(17);
+birthday.setMinutes(30);
+birthday.setSeconds(40);
+birthday.setMilliseconds(15);
 
-let val;
-
-val = person.firstname;
-val = person['lastname'];
-val = person.age;
-val = person.hobbies[1];
-val = person.address['city'];
-val = person.getBirthdayYear();
-console.log(val);
+console.log(birthday);
