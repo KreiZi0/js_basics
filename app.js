@@ -1,53 +1,33 @@
-// deklareerimine
-function greeting(firstname = 'Kadi', lastname = 'Tamm'){
+let val;
 
-/*'	if(typeof firstname === 'undefined'){
-		firstname = 'Kadi';
-		
-	}
-	if (typeof lastname === 'undefined'){
-		lastname = 'Tamm';
-	*/
-	return 'Tere, ' + firstname + ' ' + lastname;
-}
+val = document;
 
+val = document.all;
 
-// kasutamine
-greet = greeting('Anna', 'Tamm');
-console.log(greet);
+val = document.all[4];
+val = document.all.length;
+val = document.head;
+val = document.body;
+val = document.domain;
+val = document.doctype;
+val = document.URL;
+val = document.characterSet;
+val = document.contentType;
 
-// f-on defineeritud nagu const
+val = document.forms;
+val = document.forms[0];
+val = document.forms[0].method;
+val = document.forms[0].action;
+val = document.forms[0].id;
 
-const square = function(number = 3){
-	return Math.pow(number, 2);
+val = document.links;
+val = document.links[1];
+val = document.links[1].id;
+val = document.links[1].className;
 
-};
+val= document.scripts;
 
-console.log(square());
+val= document.scripts[0];
+val = document.scripts[0].getAttribute('src');
 
-//
-(function(){
-	console.log('function is running');
-})();
-
-(function(name){
-	console.log('Tere, ' + name );
-})('Anna');
-
-// f-oni objekti atribuutidena
-const todoList = {
-	add: function(task){
-		console.log(task + 'task is added');
-	},
-	edit: function(oldtask, newtask){
-		console.log(`${oldtask} is changed to ${newtask}`);
-
-	},
-	delete: function(task){
-		console.log(task + ' is deleted');
-	}
-};
-
-todoList.add("Study JS");
-todoList.edit("Study JS ", "Study Typescript");
-todoList.delete("Study JS");
+console.log(val);
