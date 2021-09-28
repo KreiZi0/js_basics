@@ -1,54 +1,53 @@
-// for tsükkel
+// deklareerimine
+function greeting(firstname = 'Kadi', lastname = 'Tamm'){
 
-for(let i = 0; i < 10; i++){
-	//if(i % 2 === 0)
-	//	 console.log(i);
-}
-
-for(let i = 0; i < 10; i++){
-//	if(i === 5) break;
-//	if(i === 5) continue;
-//	console.log(i);
-}
-
-
-// while
-
-let i = 0;
-while(i<10){
-	console.log(i);
-	i++;
-}
-
-// do while
-console.log("do while");
-let j = 0;
-do{
-	console.log(j);
-	j++;
-
-} while(j < 10);
-
-
-// tüsklid ja massiivid
-const cars = ["Ford MONDEO", "Honda CIVIC", "Toyota AVENSIS"];
-for(let i = 0; i < cars.length; i++){
-	console.log(cars[i]);
+/*'	if(typeof firstname === 'undefined'){
+		firstname = 'Kadi';
+		
+	}
+	if (typeof lastname === 'undefined'){
+		lastname = 'Tamm';
+	*/
+	return 'Tere, ' + firstname + ' ' + lastname;
 }
 
 
-// foreach-iga 
+// kasutamine
+greet = greeting('Anna', 'Tamm');
+console.log(greet);
 
-cars.forEach(function(car, index){
-	console.log(`${index} - ${car}`);
-});
+// f-on defineeritud nagu const
 
-const person = {
-	firstname: "Kalle",
-	lastname: "Puu",
-	age: 25
-}
+const square = function(number = 3){
+	return Math.pow(number, 2);
 
-for (let element in person){
-	console.log(`${element} - ${person[element]}`);
-}
+};
+
+console.log(square());
+
+//
+(function(){
+	console.log('function is running');
+})();
+
+(function(name){
+	console.log('Tere, ' + name );
+})('Anna');
+
+// f-oni objekti atribuutidena
+const todoList = {
+	add: function(task){
+		console.log(task + 'task is added');
+	},
+	edit: function(oldtask, newtask){
+		console.log(`${oldtask} is changed to ${newtask}`);
+
+	},
+	delete: function(task){
+		console.log(task + ' is deleted');
+	}
+};
+
+todoList.add("Study JS");
+todoList.edit("Study JS ", "Study Typescript");
+todoList.delete("Study JS");
