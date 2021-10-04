@@ -1,18 +1,14 @@
-let val;
+//event elements
 
-//elementide loomine
-const li = document.createElement('li');
-//klassi määramine
-li.className = 'collection-item';
-
-//teksti lisamine
-li.appendChild(document.createTextNode("Study JS element creation"));
-
-//lisame li element ul-sse
-const ul = document.querySelector('ul');
+const form = document.querySelector('form');
+const taskInput = document.querySelector('#task');
 
 
-ul.appendChild(li);
+form.addEventListener('submit', runEvent)
 
-
-console.log(li);
+function runEvent(e) {
+	console.log(`Évent is ${e.type}`);
+	console.log(taskInput.value)
+	taskInput.value = "";
+	e.preventDefault();
+}
