@@ -1,25 +1,11 @@
 //event elements
 
-const form = document.querySelector('form');
-const taskInput = document.querySelector('#task');
+const list = document.querySelector('ul');
 
-//keyboard
-//taskInput.addEventListener('keydown', runEvent);
-//taskInput.addEventListener('keyup', runEvent);
-//taskInput.addEventListener('keypress', runEvent);
+console.log(list)
+//click by symbol
 
-
-//focus and blur
-//taskInput.addEventListener('focus', runEvent);
-//taskInput.addEventListener('blur', runEvent);
-
-//cut and paste
-//taskInput.addEventListener('cut', runEvent);
-//taskInput.addEventListener('paste', runEvent);
-
-//input by symbol
-taskInput.addEventListener('input', runEvent);
-
+list.addEventListener("click", runEvent);
 
 
 function runEvent(e) {
