@@ -2,20 +2,22 @@
 const form = document.querySelector('form');
 const taskInput = document.querySelector('#task');
 const taskList = document.querySelector('ul');
-
 const clearBtn = document.querySelector('#clear-tasks');
+const filterInput = document.querySelector('#filter');
 
 // form submit event
-form.addEventListener('submit', addTask);
 
+
+form.addEventListener('submit', addTask);
 // taskList X click event
 taskList.addEventListener('click', removeTask);
-
 // clearBtn click event
 clearBtn.addEventListener('click', clearTasks);
 
 // page reload
 document.addEventListener('DOMContentLoaded', getTasksFromLS);
+
+filterInput.addEventListener('keyup', filterTasks);
 
 function addTask(e) {
 	const li = document.createElement('li');
@@ -28,33 +30,25 @@ function addTask(e) {
 	link.setAttribute('href', '#');
 	li.appendChild(link);
 	taskList.appendChild(li);
-
 	addTaskToLS(taskInput.value);
-
 	taskInput.value = '';
-
 	e.preventDefault();
 }
-
 function removeTask(e){
 	console.log(e.target.parentElement);
 	if(e.target.textContent == "X"){
 		if(confirm('Do you want to delete this task?')) {
 			e.target.parentElement.remove();
-
 			removeTaskFromLS(e.target.parentElement.firstChild.textContent);
 		}
 	}
 }
-
 function clearTasks(e){
 	while(taskList.firstChild){
 		taskList.removeChild(taskList.firstChild);
 	}
 	localStorage.clear();
 }
-
-
 function addTaskToLS(task){
 	let tasks;
 	if(localStorage.getItem('tasks') === null){
@@ -65,8 +59,6 @@ function addTaskToLS(task){
 	tasks.push(task);
 	localStorage.setItem('tasks', JSON.stringify(tasks));
 }
-
-
 function removeTaskFromLS(task){
 	let tasks;
 	if(localStorage.getItem('tasks') === null){
@@ -100,5 +92,18 @@ function getTasksFromLS(e){
 		link.setAttribute('href', '#');
 		li.appendChild(link);
 		taskList.appendChild(li);
+	});
+}
+
+function filterTasks(e){
+	const text = e.target.value.toLowerCase();
+	const tasks = document.querySelectorAll('li');
+	tasks.forEach(function(li){
+		const task = li.firstChild.textContent.toLowerCase();
+		if(task.indexOf(text) != -1) {
+			li.style.display = 'block';
+		} else {
+            li.style.display = 'none';
+		}
 	});
 }
